@@ -39,7 +39,6 @@ export default {
     }
   },
   created:function(){
-    // this.setProducts();
     this.setTodos();
   }
 }
