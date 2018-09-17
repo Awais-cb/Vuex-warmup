@@ -1,4 +1,4 @@
-# vuex_feat_cb
+# Vuex warmup
 
 > A Vue.js project
 

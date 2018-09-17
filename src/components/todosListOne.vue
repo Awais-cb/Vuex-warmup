@@ -1,6 +1,6 @@
 <template>
 	<div id='todosListOne'>
-		<h3>Product list one</h3>
+		<h3>Todo list one</h3>
 	</div>
 </template>
 <script>

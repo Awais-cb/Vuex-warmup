@@ -13,7 +13,7 @@
 <script>
 import todosListOne from './components/todosListOne'
 import todosListTwo from './components/todosListTwo'
-// import appConfigs from '@/includes/api/appConfigs'
+import appConfigs from '@/includes/api/appConfigs'
 
 export default {
   name: 'App',
@@ -22,20 +22,25 @@ export default {
       
     }
   },
-  computed:{
-    todos(){
-      return this.$store.state.todos.then(data=>{
-        return data;
-      });
-    }
-  },
   components: {
     'todos-list-one':todosListOne,
     'todos-list-two':todosListTwo
   },
+  computed:{
+    todos(){
+      return this.$store.getters.getTodos;
+    },
+  },
+  methods:{
+    setTodos:function () {
+      appConfigs.getTodosApi().then(todos =>{
+        this.$store.commit('setTodos',todos);
+      });    
+    }
+  },
   created:function(){
-    console.log(this.$store.state.todos);
-    console.log(this.$store.state.userid);
+    // this.setProducts();
+    this.setTodos();
   }
 }
 </script>
